@@ -631,6 +631,10 @@ class DocumentManager implements ObjectManager
      */
     public function clear($documentName = null)
     {
+        if (null === $documentName){
+            $this->documentCollections = array();
+            $this->documentDatabases = array();
+        }
         $this->unitOfWork->clear($documentName);
     }
 

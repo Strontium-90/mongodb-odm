@@ -2634,6 +2634,8 @@ class UnitOfWork implements PropertyChangedListener
             if ($this->commitOrderCalculator !== null) {
                 $this->commitOrderCalculator->clear();
             }
+            $this->persisters = array();
+            $this->collectionPersister = null;
         } else {
             $visited = array();
             foreach ($this->identityMap as $className => $documents) {
